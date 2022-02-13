@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Demo</title>
+	<style>
+		h1 {
+			color: blue;
+		}
+		.container {
+			padding: 25px;
+			width: 300px;
+		}
+		
+		label,
+		input {
+			margin-bottom: 10px;
+		}
+		
+		button {
+			float: right;
+			margin-right: 15px;
+			background-color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+		<h1>form</h1>
+		<br><br>
+		<div class="container">
+			<div>
+				<label>Username:  </label>
+				<input type="text" size="20">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password"
+					id="number" >
+				<span id="error"></span>
+			</div>
+			<button type="submit"
+					onclick="errorMessage()">
+				Submit
+			</button>
+           
+		</div>
+	</center>
+</body>
+<script>
+   
+	function errorMessage() {
+		var error = document.getElementById("error")
+        var number = document.getElementById("number")
+		if (isNaN(number.value))
+		{
+            
+			// Changing content and color of content
+			error.textContent = "Please enter a valid number"
+			error.style.color = "red"
+		 
+        }
+         else{
+			if (number.value.length>6) {
+             error.innerHTML = "Limit is 16 characters"
+            }
+			else{
+			error.textContent = ""
+		}
+		 }
+    }
+   
+</script>
+
+</html>
